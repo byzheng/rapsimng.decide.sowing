@@ -2,7 +2,7 @@
 % Please edit documentation in R/evaluate.R
 \name{evaluate}
 \alias{evaluate}
-	itle{Evaluate sowing window suitability from APSIM NG outputs}
+\title{Evaluate sowing window suitability from APSIM NG outputs}
 \usage{
 evaluate(data, context = list(), criteria = list(), options = list(), ...)
 }

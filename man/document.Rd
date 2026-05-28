@@ -2,7 +2,7 @@
 % Please edit documentation in R/document.R
 \name{document}
 \alias{document}
-	itle{Document sowing window suitability from APSIM NG outputs}
+\title{Document sowing window suitability from APSIM NG outputs}
 \usage{
 document(data, context = list(), criteria = list(), options = list(), ...)
 }

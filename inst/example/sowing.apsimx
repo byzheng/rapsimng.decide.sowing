@@ -105,8 +105,8 @@
               "Children": [
                 {
                   "$type": "Models.Factorial.Factor, Models",
-                  "Specification": "[Sowing].Script.CultivarName=spring quick-mid, spring mid, spring mid-slow",
-                  "Name": "SowingWindow",
+                  "Specification": "[Sowing].Script.CultivarName=Scepter",
+                  "Name": "Cultivar",
                   "ResourceName": null,
                   "Children": [],
                   "Enabled": true,
@@ -114,7 +114,7 @@
                 },
                 {
                   "$type": "Models.Factorial.Factor, Models",
-                  "Specification": "[Sowing].Script.SowDate=21-apr, 24-apr, 27-apr, 30-apr",
+                  "Specification": "[Sowing].Script.SowDate=01-Apr,04-Apr,07-Apr,10-Apr,13-Apr,16-Apr,19-Apr,22-Apr,25-Apr,28-Apr,01-May,04-May,07-May,10-May,13-May,16-May,19-May,22-May,25-May,28-May,31-May,03-Jun,06-Jun,09-Jun,12-Jun,15-Jun,18-Jun,21-Jun,24-Jun,27-Jun,30-Jun",
                   "Name": "SowingDate",
                   "ResourceName": null,
                   "Children": [],
