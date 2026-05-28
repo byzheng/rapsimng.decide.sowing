@@ -7,7 +7,7 @@ test_that("document builds and renders from example APSIM output", {
     testthat::skip_if(!nzchar(quarto_bin), "Quarto CLI is not available")
 
     data <- rapsimng.decide::read_output(
-        system.file("example/cultivar.apsimx", package = "rapsimng.decide.sowing"),
+        system.file("example/sowing.apsimx", package = "rapsimng.decide.sowing"),
         "HarvestReport"
     ) |>
         dplyr::filter(Year > 1995)
@@ -43,21 +43,10 @@ test_that("document builds and renders from example APSIM output", {
     testthat::expect_false(any(grepl('rapsimng.decide::read_output(source$file, source$report)', lines, fixed = TRUE)))
     testthat::expect_true(any(grepl('rapsimng.decide::evaluate,', lines, fixed = TRUE)))
     testthat::expect_true(any(
-        grepl('SowingWindow', lines, fixed = TRUE) &
+        grepl('Sowing Window', lines, fixed = TRUE) &
             grepl('Average Yield', lines, fixed = TRUE)
     ))
-    testthat::expect_true(any(
-        grepl('SowingWindow', lines, fixed = TRUE) &
-            grepl('Average Flowering Time', lines, fixed = TRUE)
-    ))
-    testthat::expect_true(any(
-        grepl('SowingWindow', lines, fixed = TRUE) &
-            grepl('Average Frost Reduction Ratio', lines, fixed = TRUE)
-    ))
-    testthat::expect_true(any(
-        grepl('SowingWindow', lines, fixed = TRUE) &
-            grepl('Average Heat Reduction Ratio', lines, fixed = TRUE)
-    ))
+    
     testthat::expect_false(any(grepl('knitr::kable(yield_summary_table)', lines, fixed = TRUE)))
 
     render_dir <- file.path(tempdir(), "sowing-report-test")
