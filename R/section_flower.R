@@ -105,12 +105,12 @@
 	labels <- .flower_summary_column_labels(metrics, columns)
 
 	table_data <- metrics$value |>
-		dplyr::arrange(.data$flower_mean) |>
+		dplyr::mutate(doy = as.numeric(as.Date(paste(.data[[group_column]], '-2011', sep = ''), format = '%d-%b-%Y')) - as.numeric(as.Date('2010-12-31'))) |>
+		dplyr::arrange(doy) |>
 		dplyr::select(dplyr::all_of(c(group_column, columns))) |>
 		dplyr::mutate(
 			dplyr::across(dplyr::all_of(columns), ~ round(.x, digits))
 		)
-
 	colnames(table_data) <- c("SowingWindow", unname(labels[columns]))
 	table_data
 }

@@ -196,12 +196,12 @@
 	mean_column <- paste0(prefix, "_reduction_mean")
 
 	table_data <- metrics$value |>
-		dplyr::arrange(dplyr::desc(.data[[mean_column]])) |>
+		dplyr::mutate(doy = as.numeric(as.Date(paste(.data[[group_column]], '-2011', sep = ''), format = '%d-%b-%Y')) - as.numeric(as.Date('2010-12-31'))) |>
+		dplyr::arrange(doy) |>
 		dplyr::select(dplyr::all_of(c(group_column, columns))) |>
 		dplyr::mutate(
 			dplyr::across(dplyr::all_of(columns), ~ round(.x, digits))
 		)
-
 	colnames(table_data) <- c("SowingWindow", unname(labels[columns]))
 	table_data
 }

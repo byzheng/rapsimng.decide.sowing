@@ -109,12 +109,12 @@
 	labels <- .yield_summary_column_labels(metrics, columns)
 
 	table_data <- metrics$value |>
-		dplyr::arrange(dplyr::desc(.data$yield_mean)) |>
+		dplyr::mutate(doy = as.numeric(as.Date(paste(.data[[group_column]], '-2011', sep = ''), format = '%d-%b-%Y')) - as.numeric(as.Date('2010-12-31'))) |>
+		dplyr::arrange(doy) |>
 		dplyr::select(dplyr::all_of(c(group_column, columns))) |>
 		dplyr::mutate(
 			dplyr::across(dplyr::all_of(columns), ~ round(.x, digits))
 		)
-
 	colnames(table_data) <- c("Sowing Window", unname(labels[columns]))
 	table_data
 }
@@ -215,8 +215,10 @@
 			"sowing_window_column <- names(yield_summary_data)[[1]]",
 			"yield_summary_plot_data <- yield_summary_data |>",
 			"    dplyr::rename(sowing_window = dplyr::all_of(sowing_window_column)) |>",
-			"    dplyr::arrange(dplyr::desc(yield_mean)) |>",
-			"    dplyr::mutate(sowing_window = forcats::fct_reorder(sowing_window, yield_mean, .desc = TRUE))",
+			"    dplyr::mutate(doy = as.numeric(as.Date(paste(sowing_window, '-2011', sep = ''), format = '%d-%b-%Y')) - as.numeric(as.Date('2010-12-31'))) |>",
+			"    dplyr::arrange(doy) |>",
+			"    dplyr::mutate(sowing_window = factor(sowing_window, levels = unique(sowing_window))) |>",
+			"    dplyr::select(-doy)",
 			"ggplot2::ggplot(",
 			"    yield_summary_plot_data,",
 			"    ggplot2::aes(",
