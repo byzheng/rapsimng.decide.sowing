@@ -13,7 +13,8 @@ Imports:
     tibble,
     rlang,
     stats,
-    knitr
+    knitr,
+    rapsimng.decide.core
 Suggests:
     here,
     quarto,
