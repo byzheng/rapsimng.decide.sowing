@@ -106,7 +106,7 @@
 
 	table_data <- metrics$value |>
 		dplyr::mutate(doy = as.numeric(as.Date(paste(.data[[group_column]], '-2011', sep = ''), format = '%d-%b-%Y')) - as.numeric(as.Date('2010-12-31'))) |>
-		dplyr::arrange(doy) |>
+		dplyr::arrange(.data$doy) |>
 		dplyr::select(dplyr::all_of(c(group_column, columns))) |>
 		dplyr::mutate(
 			dplyr::across(dplyr::all_of(columns), ~ round(.x, digits))

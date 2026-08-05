@@ -17,7 +17,6 @@ Imports:
 Suggests:
     here,
     quarto,
-    rapsimng.decide,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 URL: https://sowing.decide.rapsimng.bangyou.me/,
