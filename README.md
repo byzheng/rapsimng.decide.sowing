@@ -1,5 +1,6 @@
-![R-CMD-check](https://github.com/byzheng/rapsimng.decide.sowing/workflows/R-CMD-check/badge.svg)
+[![R-CMD-check.yaml](https://github.com/byzheng/rapsimng.decide.sowing/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/byzheng/rapsimng.decide.sowing/actions/workflows/R-CMD-check.yaml)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/rapsimng.decide.sowing)](https://cran.r-project.org/package=rapsimng.decide.sowing)
+
 [![](http://cranlogs.r-pkg.org/badges/grand-total/rapsimng.decide.sowing?color=green)](https://cran.r-project.org/package=rapsimng.decide.sowing)
 [![](http://cranlogs.r-pkg.org/badges/last-month/rapsimng.decide.sowing?color=green)](https://cran.r-project.org/package=rapsimng.decide.sowing)
 [![](http://cranlogs.r-pkg.org/badges/last-week/rapsimng.decide.sowing?color=green)](https://cran.r-project.org/package=rapsimng.decide.sowing)
