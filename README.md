@@ -1,6 +1,11 @@
 [![R-CMD-check.yaml](https://github.com/byzheng/rapsimng.decide.sowing/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/byzheng/rapsimng.decide.sowing/actions/workflows/R-CMD-check.yaml)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/rapsimng.decide.sowing)](https://cran.r-project.org/package=rapsimng.decide.sowing)
 
+[![](http://cranlogs.r-pkg.org/badges/grand-total/rapsimng.decide.sowing?color=green)](https://cran.r-project.org/package=rapsimng.decide.sowing)
+[![](http://cranlogs.r-pkg.org/badges/last-month/rapsimng.decide.sowing?color=green)](https://cran.r-project.org/package=rapsimng.decide.sowing)
+[![](http://cranlogs.r-pkg.org/badges/last-week/rapsimng.decide.sowing?color=green)](https://cran.r-project.org/package=rapsimng.decide.sowing)
+
+
 # rapsimng.decide.sowing
 
 `rapsimng.decide.sowing` analyses APSIM Next Generation simulation outputs to support sowing decisions. It works on outputs already loaded into R and does not run APSIM simulations or make automatic recommendations.
