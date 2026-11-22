@@ -12,6 +12,7 @@ Imports:
     dplyr,
     tibble,
     ggplot2,
+    forcats,
     rlang,
     stats,
     knitr,

@@ -60,7 +60,7 @@ test_that("document builds and renders from example APSIM output", {
     quarto::quarto_render(
         input = qmd_path,
         output_file = basename(html_path),
-        quiet = TRUE
+        quiet = FALSE
     )
 
     testthat::expect_true(file.exists(qmd_path))
